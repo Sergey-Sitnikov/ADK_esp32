@@ -1,0 +1,13 @@
+# Target labels
+ bootloader
+# Source files and their labels
+/home/ssv/ADK_esp32/build/CMakeFiles/bootloader
+/home/ssv/ADK_esp32/build/CMakeFiles/bootloader.rule
+/home/ssv/ADK_esp32/build/CMakeFiles/bootloader-complete.rule
+/home/ssv/ADK_esp32/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule
+/home/ssv/ADK_esp32/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule
+/home/ssv/ADK_esp32/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule
+/home/ssv/ADK_esp32/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule
+/home/ssv/ADK_esp32/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule
+/home/ssv/ADK_esp32/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule
+/home/ssv/ADK_esp32/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule
