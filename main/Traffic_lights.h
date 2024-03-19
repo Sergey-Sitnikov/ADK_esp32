@@ -14,38 +14,9 @@ void Traffic_lights(void *pvParameter)
 {
   while (1)
   {
-    // Serial.println(time);
-    // Serial.println(current_time);
-    // Serial.println(time_circle);
-
-    /* if (yellow_flashing_state == "on" && os_state == "off" && manual_mode_state == "off") {
-      //  if (yellow_flashing_state == "on") {
-      if (time_circle == 0) {
-        gpio_set_level(gpio_num_t(S1), 0);
-        gpio_set_level(gpio_num_t(S0), 0);
-      }
-      if (time_circle == 1) {
-        gpio_set_level(gpio_num_t(S1), 1);
-        gpio_set_level(gpio_num_t(S0), 0);
-      }
-      if (time_circle == 84) {
-        gpio_set_level(gpio_num_t(S1), 1);
-        gpio_set_level(gpio_num_t(S0), 1);
-      }
-      if (time_circle == 87) {
-        gpio_set_level(gpio_num_t(S1), 1);
-        gpio_set_level(gpio_num_t(S0), 0);
-      }
-      if (time_circle == 88) {
-        gpio_set_level(gpio_num_t(S1), 1);
-        gpio_set_level(gpio_num_t(S0), 1);
-      }
-      if (time_circle == 89) {
-        gpio_set_level(gpio_num_t(S1), 1);
-        gpio_set_level(gpio_num_t(S0), 0);
-      }
-
-    }*/
+    if (main_mode_state == std::string("on") && yellow_flashing_state == std::string("off") && os_state == std::string("off") && manual_mode_state == std::string("off"))
+    {
+    }
     if (yellow_flashing_state == std::string("on") && os_state == std::string("off") && manual_mode_state == std::string("off"))
     {
       //  if (yellow_flashing_state == "on") {
@@ -75,7 +46,7 @@ void Traffic_lights(void *pvParameter)
       vTaskDelay(pdMS_TO_TICKS(10));
       // ESP_LOGI(TAG, "YF");
     }
-    
+
     if (os_state == std::string("on") && yellow_flashing_state == std::string("off") && manual_mode_state == std::string("off"))
     {
       gpio_set_level(gpio_num_t(S1), 0);
@@ -284,37 +255,7 @@ void Traffic_lights(void *pvParameter)
         gpio_set_level(gpio_num_t(S0), 0);
         vTaskDelay(pdMS_TO_TICKS(40));
       }
-      
     }
-    
-    /*if (yellow_flashing_state == "on" && os_state == "off" && all_red_state == "off") {
-      //  if (yellow_flashing_state == "on") {
-
-      gpio_set_level(gpio_num_t(S1), 0);
-      gpio_set_level(gpio_num_t(S0), 0);
-      vTaskDelay(pdMS_TO_TICKS(10);
-
-      gpio_set_level(gpio_num_t(S1), 1);
-      gpio_set_level(gpio_num_t(S0), 0);
-
-      vTaskDelay(pdMS_TO_TICKS(830);
-      gpio_set_level(gpio_num_t(S1), 1);
-      gpio_set_level(gpio_num_t(S0), 1);
-      vTaskDelay(pdMS_TO_TICKS(30);
-      gpio_set_level(gpio_num_t(S1), 1);
-      gpio_set_level(gpio_num_t(S0), 0);
-      vTaskDelay(pdMS_TO_TICKS(10);
-      gpio_set_level(gpio_num_t(S1), 1);
-      gpio_set_level(gpio_num_t(S0), 1);
-      vTaskDelay(pdMS_TO_TICKS(10);
-      gpio_set_level(gpio_num_t(S1), 1);
-      gpio_set_level(gpio_num_t(S0), 0);
-      vTaskDelay(pdMS_TO_TICKS(110);
-    }*/
-    //  ++time_circle;
-    //   if (time_circle == 100)
-    //     time_circle = 0;
-
-     vTaskDelay(pdMS_TO_TICKS(100));
+   vTaskDelay(pdMS_TO_TICKS(100));
   }
 }

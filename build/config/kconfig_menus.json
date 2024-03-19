@@ -4713,163 +4713,32 @@
             {
                 "children": [],
                 "depends_on": null,
-                "help": null,
-                "id": "ENV_GPIO_RANGE_MIN",
-                "name": "ENV_GPIO_RANGE_MIN",
+                "help": "SSID (network name) for the example to connect to.",
+                "id": "ESP_WIFI_SSID",
+                "name": "ESP_WIFI_SSID",
                 "range": null,
-                "title": null,
-                "type": "int"
+                "title": "WiFi SSID",
+                "type": "string"
             },
             {
                 "children": [],
                 "depends_on": null,
-                "help": null,
-                "id": "ENV_GPIO_RANGE_MAX",
-                "name": "ENV_GPIO_RANGE_MAX",
+                "help": "WiFi password (WPA or WPA2) for the example to use.",
+                "id": "ESP_WIFI_PASSWORD",
+                "name": "ESP_WIFI_PASSWORD",
                 "range": null,
-                "title": null,
-                "type": "int"
+                "title": "WiFi Password",
+                "type": "string"
             },
             {
                 "children": [],
                 "depends_on": null,
-                "help": null,
-                "id": "ENV_GPIO_IN_RANGE_MAX",
-                "name": "ENV_GPIO_IN_RANGE_MAX",
+                "help": "Set the Maximum retry to avoid station reconnecting to the AP unlimited when the AP is really inexistent.",
+                "id": "ESP_MAXIMUM_RETRY",
+                "name": "ESP_MAXIMUM_RETRY",
                 "range": null,
-                "title": null,
+                "title": "Maximum retry",
                 "type": "int"
-            },
-            {
-                "children": [],
-                "depends_on": null,
-                "help": null,
-                "id": "ENV_GPIO_OUT_RANGE_MAX",
-                "name": "ENV_GPIO_OUT_RANGE_MAX",
-                "range": null,
-                "title": null,
-                "type": "int"
-            },
-            {
-                "children": [],
-                "depends_on": null,
-                "help": "Set the SPI host used to communicate with the SPI Ethernet Controller.",
-                "id": "EXAMPLE_ENC28J60_SPI_HOST",
-                "name": "EXAMPLE_ENC28J60_SPI_HOST",
-                "range": [
-                    0,
-                    2
-                ],
-                "title": "SPI Host Number",
-                "type": "int"
-            },
-            {
-                "children": [],
-                "depends_on": null,
-                "help": "Set the GPIO number used by SPI SCLK.",
-                "id": "EXAMPLE_ENC28J60_SCLK_GPIO",
-                "name": "EXAMPLE_ENC28J60_SCLK_GPIO",
-                "range": [
-                    0,
-                    33
-                ],
-                "title": "SPI SCLK GPIO number",
-                "type": "int"
-            },
-            {
-                "children": [],
-                "depends_on": null,
-                "help": "Set the GPIO number used by SPI MOSI.",
-                "id": "EXAMPLE_ENC28J60_MOSI_GPIO",
-                "name": "EXAMPLE_ENC28J60_MOSI_GPIO",
-                "range": [
-                    0,
-                    33
-                ],
-                "title": "SPI MOSI GPIO number",
-                "type": "int"
-            },
-            {
-                "children": [],
-                "depends_on": null,
-                "help": "Set the GPIO number used by SPI MISO.",
-                "id": "EXAMPLE_ENC28J60_MISO_GPIO",
-                "name": "EXAMPLE_ENC28J60_MISO_GPIO",
-                "range": [
-                    0,
-                    39
-                ],
-                "title": "SPI MISO GPIO number",
-                "type": "int"
-            },
-            {
-                "children": [],
-                "depends_on": null,
-                "help": "Set the GPIO number used by SPI CS.",
-                "id": "EXAMPLE_ENC28J60_CS_GPIO",
-                "name": "EXAMPLE_ENC28J60_CS_GPIO",
-                "range": [
-                    0,
-                    33
-                ],
-                "title": "SPI CS GPIO number",
-                "type": "int"
-            },
-            {
-                "children": [],
-                "depends_on": null,
-                "help": "Set the clock speed (MHz) of SPI interface.",
-                "id": "EXAMPLE_ENC28J60_SPI_CLOCK_MHZ",
-                "name": "EXAMPLE_ENC28J60_SPI_CLOCK_MHZ",
-                "range": [
-                    5,
-                    20
-                ],
-                "title": "SPI clock speed (MHz)",
-                "type": "int"
-            },
-            {
-                "children": [],
-                "depends_on": null,
-                "help": "Set the GPIO number used by ENC28J60 interrupt.",
-                "id": "EXAMPLE_ENC28J60_INT_GPIO",
-                "name": "EXAMPLE_ENC28J60_INT_GPIO",
-                "range": [
-                    0,
-                    39
-                ],
-                "title": "Interrupt GPIO number",
-                "type": "int"
-            },
-            {
-                "children": [
-                    {
-                        "children": [],
-                        "depends_on": "<choice EXAMPLE_ENC28J60_DUPLEX_MODE>",
-                        "help": "Set ENC28J60 to Full Duplex mode. Do not forget to manually set the remote node (switch, router\nor Ethernet controller) to full-duplex operation mode too.",
-                        "id": "EXAMPLE_ENC28J60_DUPLEX_FULL",
-                        "name": "EXAMPLE_ENC28J60_DUPLEX_FULL",
-                        "range": null,
-                        "title": "Full Duplex",
-                        "type": "bool"
-                    },
-                    {
-                        "children": [],
-                        "depends_on": "<choice EXAMPLE_ENC28J60_DUPLEX_MODE>",
-                        "help": "Set ENC28J60 to Half Duplex mode.",
-                        "id": "EXAMPLE_ENC28J60_DUPLEX_HALF",
-                        "name": "EXAMPLE_ENC28J60_DUPLEX_HALF",
-                        "range": null,
-                        "title": "Half Duplex",
-                        "type": "bool"
-                    }
-                ],
-                "depends_on": null,
-                "help": "Select ENC28J60 Duplex operation mode.",
-                "id": "example-configuration-duplex-mode",
-                "name": "EXAMPLE_ENC28J60_DUPLEX_MODE",
-                "title": "Duplex Mode",
-                "type": "choice"
             }
         ],
         "depends_on": null,

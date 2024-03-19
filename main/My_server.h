@@ -1,18 +1,15 @@
 #pragma once
-//#include <std::string>
+// #include <std::string>
 #include "global.h"
-//using namespace std;
-
+#include "nlohmann/json.hpp"
+// using namespace std;
 
 std::string web()
 {
-  // if (findJson() != "NONE")
-  // {
-  //   if (there_config == false)
-  //   {
-  //     jsonread();
-  //   }
-  // }
+  if (there_config == false)
+    // if (findJson() == true)
+
+    json_desearelization();
 
   std::string index_html =
       "<!DOCTYPE html><html lang=\"ru\">"
@@ -26,14 +23,16 @@ std::string web()
       ".button2 {background-color: GREEN;}"
       "</style>"
       "</head> "
+
       "<body><h1>CDI устройство управления светофором</h1>";
 
   std::string name_position;
-  // if (there_config == true)
-  //   name_position = doc["description"].as<std::string>();
-  // else
-  name_position = "null";
+  if (there_config == true)
+    name_position = std::string(doc["description"]);
+  else
+    name_position = "null";
   index_html += name_position;
+  std::cout << std::string(doc["description"]) << std::endl;
 
   index_html +=
       "<p>основной режим</p>";
@@ -76,17 +75,17 @@ std::string web()
       index_html +=
           "<p><a href=\"/manual_mode/off\"><button class=\"button button2\">ВКЛ</button></a></p>"
           "<form method=\"POST\" action=\"/manual\">";
-      // int j = doc["stages"].size();
+      int j = doc["stages"].size();
 
-      // for (int i = 0; i < j; ++i)
-      // {
-      //   std::string name = doc["stages"][i]["name"];
-      //   index_html += "<input type=\"radio\" name=\"faza\" value=" + std::string(i) + ">";
-      //   index_html += "Фаза " + std::string(i + 1);
-      //   if (faza - 1 == i)
-      //     index_html += "  v";
-      //   index_html += "<br>";
-      // }
+      for (int i = 0; i < j; ++i)
+      {
+        std::string name = doc["stages"][i]["name"];
+        index_html += "<input type=\"radio\" name=\"faza\" value=" + std::to_string(i) + ">";
+        index_html += "Фаза " + std::to_string(i + 1);
+        if (faza - 1 == i)
+          index_html += "  v";
+        index_html += "<br>";
+      }
       index_html += "<br>";
       index_html += "<input type=\"submit\" value=\"выбрать\">";
       index_html += "<br><br></form>";
@@ -103,7 +102,8 @@ std::string web()
   }
   index_html +=
       "<form method=\"POST\" action=\"/upload\" enctype=\"multipart/form-data\">загрузить конфигурацию: <input type=\"file\" name=\"data\"/><input type=\"submit\" value=\"загрузить\"></form>";
-
+  //\"multipart/form-data\"
+  // Content-Type: application/json
   index_html +=
       "<form action=\"/download\"  method='POST' >"
       "<p>скачать конфигурацию: <input type=\"submit\" value=\"Скачать\"></p></form>";
