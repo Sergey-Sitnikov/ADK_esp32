@@ -80,7 +80,8 @@
 #include <nvs_flash.h>
 #include <sys/param.h>
 
-#include <cJSON.h>
+#include <driver/gpio.h>
+// #include <cJSON.h>
 
 #include "global.h"
 #include "My_server.h"
@@ -171,7 +172,7 @@ esp_err_t Manual_ON(httpd_req_t *req)
   // return send_web_page(req);
   //  faza = optionValue.toInt() + 1;
   faza = int(req->content_len);
-  std::cout << faza << std::endl;
+  // std::cout << faza << std::endl;
   int response = httpd_resp_send(req, web().c_str(), HTTPD_RESP_USE_STRLEN);
   return response;
 }
@@ -217,52 +218,52 @@ esp_err_t Manual(httpd_req_t *req)
   return ESP_FAIL;
 };
 
-
 esp_err_t Upload(httpd_req_t *req)
 {
-    char buf[1024];
-    int remaining = req->content_len;
-    FILE *fd = fopen("/spiffs/data.json", "w");
-    if (!fd)
+  char buf[1024];
+  int remaining = req->content_len;
+  FILE *fd = fopen("/spiffs/data.json", "w");
+  if (!fd)
+  {
+    ESP_LOGE("Upload", "Failed to open file for writing");
+    return ESP_FAIL; // Возврат ошибки, если файл не может быть открыт
+  }
+
+  while (remaining > 0)
+  {
+    int recv_len = httpd_req_recv(req, buf, MIN(remaining, sizeof(buf)));
+    if (recv_len <= 0)
     {
-        ESP_LOGE("Upload", "Failed to open file for writing");
-        return ESP_FAIL; // Возврат ошибки, если файл не может быть открыт
+      fclose(fd);
+      if (recv_len == HTTPD_SOCK_ERR_TIMEOUT)
+      {
+        httpd_resp_send_408(req);
+      }
+      return ESP_FAIL;
     }
 
-    while (remaining > 0)
+    int write_len = fwrite(buf, 1, recv_len, fd);
+    if (write_len != recv_len)
     {
-        int recv_len = httpd_req_recv(req, buf, MIN(remaining, sizeof(buf)));
-        if (recv_len <= 0)
-        {
-            fclose(fd);
-            if (recv_len == HTTPD_SOCK_ERR_TIMEOUT)
-            {
-                httpd_resp_send_408(req);
-            }
-            return ESP_FAIL;
-        }
-
-        int write_len = fwrite(buf, 1, recv_len, fd);
-        if (write_len != recv_len)
-        {
-            ESP_LOGE("Upload", "File write failed");
-            fclose(fd);
-            return ESP_FAIL;
-        }
-
-        remaining -= recv_len;
+      ESP_LOGE("Upload", "File write failed");
+      fclose(fd);
+      return ESP_FAIL;
     }
 
-    fclose(fd);
-    ESP_LOGI("Upload", "File upload succeeded");
+    remaining -= recv_len;
+  }
 
-    httpd_resp_set_status(req, "303 See Other");
-    //httpd_resp_set_hdr(req, "Location", "/success.html"); // Перенаправление на страницу success.html
-    httpd_resp_set_hdr(req, "Location", "/"); 
-    httpd_resp_send_chunk(req, NULL, 0); // Завершение передачи данных
- // httpd_resp_sendstr(req, web().c_str()); 
+  fclose(fd);
+  ESP_LOGI("Upload", "File upload succeeded");
 
-    return ESP_OK;
+  httpd_resp_set_status(req, "303 See Other");
+  // httpd_resp_set_hdr(req, "Location", "/success.html"); // Перенаправление на страницу success.html
+  httpd_resp_set_hdr(req, "Location", "/");
+  httpd_resp_send_chunk(req, NULL, 0); // Завершение передачи данных
+  // httpd_resp_sendstr(req, web().c_str());
+  json_desearelization();
+
+  return ESP_OK;
 }
 
 esp_err_t Download(httpd_req_t *req)
@@ -610,20 +611,9 @@ static void read_json(void)
     std::cout << str << std::endl;
   }
   file.close();
-  //  FILE *fil = fopen("/spiffs/data.json", "r");
-  //   if (fil == NULL) {
-  //       printf("Ошибка открытия файла.\n");
-  //       return ;
-  //   }
 
-  //   char c;
-  //   while ((c = fgetc(fil)) != EOF) {
-  //       printf("%c", c);
-  //   }
-
-  //   fclose(fil);
-
-  //   printf(doc.read());
+  // std::cout <<doc["plans"][0]["algorithm"]["phases"][0]["stage"]
+  //<< std::endl;
 }
 
 #define UART_NUM UART_NUM_0 // Выбор номера UART (0 или 1)
@@ -726,25 +716,6 @@ void json_desearelization()
   file.close();
   file2.close();
 
-  // cJSON *root = cJSON_Parse(f.c_str());
-  // if (root == NULL)
-  // {
-  //   std::cout << "Ошибка при парсинге JSON данных" << std::endl;
-  //   return;
-  // }
-
-  // cJSON *name = cJSON_GetObjectItemCaseSensitive(root, "description");
-  // if (cJSON_IsString(name))
-  // {
-  //   std::cout << "Значение поля 'description': " << name->valuestring << std::endl;
-  // }
-  // else
-  // {
-  //   std::cout << "Поле 'description' не является строкой" << std::endl;
-  // }
-
-  // cJSON_Delete(root); // Очистка cJSON объекта после использования
-
   DeserializationError error = deserializeJson(doc, f);
   if (error)
   {
@@ -753,13 +724,17 @@ void json_desearelization()
     return;
   }
   else
+  {
     there_config = true;
-  // std::cout << std::string(doc["description"]) << std::endl;
+    read_json();
+  }
 }
 // void app_main(void)
 extern "C" void app_main()
 {
   // esp_err_t
+  //  httpd_resp_set_hdr(req, "Location", "/");
+  gpio_set_level(gpio_num_t(in1), 1);
   initial_spiffs();
 
   connect_wifi();
@@ -930,6 +905,14 @@ extern "C" void app_main()
     }
     list_files();
   }
+  // obtain_time();
+
+  // time(&now);
+  // localtime_r(&now, &timeinfo);
+
+  // Теперь у вас есть текущее реальное время в структуре 'timeinfo'
+  // Можете использовать это время по необходимости
+
   xTaskCreate(uart_task, "uart_task", 1024 * 2, NULL, 5, NULL);
   // xTaskCreatePinnedToCore(Traffic_lights, "Traffic_lights", 1024 * 4, NULL, 3, NULL, 0);
   xTaskCreate(Traffic_lights, "Traffic_lights", 1024 * 4, NULL, 1, NULL);

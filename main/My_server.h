@@ -1,7 +1,7 @@
 #pragma once
 // #include <std::string>
 #include "global.h"
-#include "nlohmann/json.hpp"
+//#include "nlohmann/json.hpp"
 // using namespace std;
 
 std::string web()
@@ -32,7 +32,7 @@ std::string web()
   else
     name_position = "null";
   index_html += name_position;
-  std::cout << std::string(doc["description"]) << std::endl;
+  //std::cout << std::string(doc["description"]) << std::endl;
 
   index_html +=
       "<p>основной режим</p>";
