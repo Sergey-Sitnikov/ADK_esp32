@@ -483,8 +483,12 @@ bool Check_pedastrian(int i)
               else
               {
                 if (doc["plans"][0]["algorithm"]["phases"][i]["recall"] == "none")
+                {
                   pedastrian = false;
-                return true;
+                  return true;
+                }
+                else
+                  return true;
               }
             }
         }
@@ -499,14 +503,11 @@ time_t t = 0;
 
 void Traffic_lights(void *pvParameter)
 {
-  // std::cout << main_mode_state << " " << yellow_flashing_state << " " << os_state << " " << manual_mode_state << " " << std::endl;
-  // uint promtact = doc["IGM"]["items"][1]["time"];
   if (!there_config)
     json_desearelization();
 
   while (1)
   {
-    //   std::cout << there_config << std::endl;
     if (gpio_get_level(gpio_num_t(in1)) == 0)
       pedastrian = 1;
 
@@ -515,36 +516,27 @@ void Traffic_lights(void *pvParameter)
       if (there_config)
       {
         get_current_time();
-        //    pedastrian = gpio_get_level(gpio_num_t(in1));
         if (t <= now)
         {
+          if (i >= doc["stages"].size())
+          {
+            i = 0;
+          }
           if (doc["plans"][0]["algorithm"]["phases"][i])
           {
             if (Check_pedastrian(i))
             {
               t = now + (time_t)doc["plans"][0]["algorithm"]["phases"][i]["minGreen"] + (time_t)doc["IGM"][0]["items"][0]["time"];
+
               faza = i + 1;
               std::cout << (time_t)doc["plans"][0]["algorithm"]["phases"][i]["minGreen"] << " " << (time_t)doc["IGM"][0]["items"][0]["time"] << " " << faza << std::endl;
-              ++i;
-              //  }
             }
-            else
-            {
-              faza = i + 2;
-              i = +2;
-            }
+            ++i;
           }
-          else
-            i = 0;
-          if (i >= doc["stages"].size())
-            i = 0;
         }
-        //  std::cout << i << std::endl;
-        //    }
-        std::cout << pedastrian << " " << gpio_get_level(gpio_num_t(in1)) << " " << i << std::endl;
+        std::cout << pedastrian << " " << gpio_get_level(gpio_num_t(in1)) << " " << i << " "
+                  << "фаза:" << faza << std::endl;
         Phase_selection();
-
-        //     std::cout << faza << " " << now << " " << t << std::endl;
       }
       else
         vTaskDelay(pdMS_TO_TICKS(100));
