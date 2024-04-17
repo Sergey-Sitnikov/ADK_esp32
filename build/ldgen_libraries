@@ -78,4 +78,4 @@
 /home/ssv/ADK_esp32/build/esp-idf/spiffs/libspiffs.a
 /home/ssv/ADK_esp32/build/esp-idf/wifi_provisioning/libwifi_provisioning.a
 /home/ssv/ADK_esp32/build/esp-idf/main/libmain.a
-/home/ssv/ADK_esp32/build/esp-idf/eth_enc28j60/libeth_enc28j60.a
+/home/ssv/ADK_esp32/build/esp-idf/ethernet_init/libethernet_init.a

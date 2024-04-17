@@ -1,0 +1,152 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"install"
+		],
+		"files" : 
+		[
+			"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 8,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 12,
+				"parent" : 0
+			}
+		]
+	},
+	"installers" : 
+	[
+		{
+			"backtrace" : 1,
+			"component" : "Unspecified",
+			"destination" : "include/mbedtls",
+			"paths" : 
+			[
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/aes.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/aria.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/asn1.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/asn1write.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/base64.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/bignum.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/build_info.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/camellia.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/ccm.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/chacha20.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/chachapoly.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/check_config.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/cipher.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/cmac.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/compat-2.x.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/config_adjust_legacy_crypto.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/config_adjust_legacy_from_psa.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/config_adjust_psa_from_legacy.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/config_adjust_psa_superset_legacy.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/config_adjust_ssl.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/config_adjust_x509.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/config_psa.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/constant_time.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/ctr_drbg.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/debug.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/des.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/dhm.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/ecdh.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/ecdsa.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/ecjpake.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/ecp.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/entropy.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/error.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/gcm.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/hkdf.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/hmac_drbg.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/lms.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/mbedtls_config.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/md.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/md5.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/memory_buffer_alloc.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/net_sockets.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/nist_kw.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/oid.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/pem.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/pk.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/pkcs12.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/pkcs5.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/pkcs7.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/platform.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/platform_time.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/platform_util.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/poly1305.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/private_access.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/psa_util.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/ripemd160.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/rsa.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/sha1.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/sha256.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/sha3.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/sha512.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/ssl.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/ssl_cache.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/ssl_ciphersuites.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/ssl_cookie.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/ssl_ticket.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/threading.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/timing.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/version.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/x509.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/x509_crl.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/x509_crt.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/x509_csr.h"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 2,
+			"component" : "Unspecified",
+			"destination" : "include/psa",
+			"paths" : 
+			[
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/psa/build_info.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/psa/crypto.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/psa/crypto_adjust_auto_enabled.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/psa/crypto_adjust_config_key_pair_types.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/psa/crypto_adjust_config_synonyms.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/psa/crypto_builtin_composites.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/psa/crypto_builtin_key_derivation.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/psa/crypto_builtin_primitives.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/psa/crypto_compat.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/psa/crypto_config.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/psa/crypto_driver_common.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/psa/crypto_driver_contexts_composites.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/psa/crypto_driver_contexts_key_derivation.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/psa/crypto_driver_contexts_primitives.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/psa/crypto_extra.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/psa/crypto_legacy.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/psa/crypto_platform.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/psa/crypto_se_driver.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/psa/crypto_sizes.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/psa/crypto_struct.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/psa/crypto_types.h",
+				"/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include/psa/crypto_values.h"
+			],
+			"type" : "file"
+		}
+	],
+	"paths" : 
+	{
+		"build" : "esp-idf/mbedtls/mbedtls/include",
+		"source" : "/home/ssv/esp/esp-idf/components/mbedtls/mbedtls/include"
+	}
+}

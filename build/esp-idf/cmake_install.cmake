@@ -514,6 +514,6 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/ssv/ADK_esp32/build/esp-idf/eth_enc28j60/cmake_install.cmake")
+  include("/home/ssv/ADK_esp32/build/esp-idf/ethernet_init/cmake_install.cmake")
 endif()
 

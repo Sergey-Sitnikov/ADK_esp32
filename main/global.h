@@ -24,7 +24,7 @@ time_t now;
 bool pedastrian = true;
 const int S0 = 26;
 const int S1 = 27;
-const int in1 = 15;
+const int in1 = 0;
 
 // struct tm timeinfo;
 //time_t promtact = 0;

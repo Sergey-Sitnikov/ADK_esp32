@@ -768,10 +768,10 @@
 /home/ssv/ADK_esp32/build/esp-idf/main/CMakeFiles/install.dir
 /home/ssv/ADK_esp32/build/esp-idf/main/CMakeFiles/install/local.dir
 /home/ssv/ADK_esp32/build/esp-idf/main/CMakeFiles/install/strip.dir
-/home/ssv/ADK_esp32/build/esp-idf/eth_enc28j60/CMakeFiles/__idf_eth_enc28j60.dir
-/home/ssv/ADK_esp32/build/esp-idf/eth_enc28j60/CMakeFiles/edit_cache.dir
-/home/ssv/ADK_esp32/build/esp-idf/eth_enc28j60/CMakeFiles/rebuild_cache.dir
-/home/ssv/ADK_esp32/build/esp-idf/eth_enc28j60/CMakeFiles/list_install_components.dir
-/home/ssv/ADK_esp32/build/esp-idf/eth_enc28j60/CMakeFiles/install.dir
-/home/ssv/ADK_esp32/build/esp-idf/eth_enc28j60/CMakeFiles/install/local.dir
-/home/ssv/ADK_esp32/build/esp-idf/eth_enc28j60/CMakeFiles/install/strip.dir
+/home/ssv/ADK_esp32/build/esp-idf/ethernet_init/CMakeFiles/__idf_ethernet_init.dir
+/home/ssv/ADK_esp32/build/esp-idf/ethernet_init/CMakeFiles/edit_cache.dir
+/home/ssv/ADK_esp32/build/esp-idf/ethernet_init/CMakeFiles/rebuild_cache.dir
+/home/ssv/ADK_esp32/build/esp-idf/ethernet_init/CMakeFiles/list_install_components.dir
+/home/ssv/ADK_esp32/build/esp-idf/ethernet_init/CMakeFiles/install.dir
+/home/ssv/ADK_esp32/build/esp-idf/ethernet_init/CMakeFiles/install/local.dir
+/home/ssv/ADK_esp32/build/esp-idf/ethernet_init/CMakeFiles/install/strip.dir
