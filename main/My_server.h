@@ -1,8 +1,8 @@
 #pragma once
 // #include <std::string>
 #include "global.h"
-//#include "nlohmann/json.hpp"
-// using namespace std;
+// #include "nlohmann/json.hpp"
+//  using namespace std;
 
 std::string web()
 {
@@ -32,7 +32,52 @@ std::string web()
   else
     name_position = "null";
   index_html += name_position;
-  //std::cout << std::string(doc["description"]) << std::endl;
+
+  index_html += "<br> Статус: ";
+  if (controller_stat[0] == 1 && controller_stat[2] == 0)
+    index_html += "ОК";
+  else
+  {
+    if (controller_stat[0] == 0)
+      index_html += "Нет связи с контроллером!";
+    if (controller_stat[2] == 1)
+      index_html += "АВАРИЯ!";
+  }
+
+  if (controller_stat[0] == 1)
+  {
+    index_html += "<br> Активная фаза: ";
+    if (controller_phase == first)
+      index_html += "1";
+    else if (controller_phase == second)
+      index_html += "2";
+    else if (controller_phase == third)
+      index_html += "3";
+    else if (controller_phase == fourth)
+      index_html += "4";
+    else if (controller_phase == fifth)
+      index_html += "5";
+    else if (controller_phase == sixth)
+      index_html += "6";
+    else if (controller_phase == seventh)
+      index_html += "7";
+    else if (controller_phase == eighth)
+      index_html += "8";
+    else if (controller_phase == ninth)
+      index_html += "9";
+    else if (controller_phase == tenth)
+      index_html += "10";
+    else if (controller_phase == eleventh)
+      index_html += "11";
+    else if (controller_phase == twelfth)
+      index_html += "12";
+    else if (controller_phase == thirteenth)
+      index_html += "Промтакт";
+    else if (controller_phase == fourteenth)
+      index_html += "14";
+    else if (controller_phase == fifteenth)
+      index_html += "15";
+  }
 
   index_html +=
       "<p>основной режим</p>";

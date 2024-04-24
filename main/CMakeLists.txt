@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.11)
 #project(ADK CXX)
 set(CMAKE_CXX_STANDARD 17)
 
-set(srcs "enc28j60_example_main.cpp" "My_server.h" "global.h" "Traffic_lights.h")
+set(srcs "ADK.cpp" "My_server.h" "global.h" "Traffic_lights.h")
 
 idf_component_register(SRCS "${srcs}"
                        INCLUDE_DIRS ".")
